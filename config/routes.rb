@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'session/new'
+  devise_for :artists
+  devise_for :users,:controller=>{
+    :registrations=>'users/registrations',
+    :sessions=>'users/sessions',
+    :passwords=>'users/passwords',
+    :omniauth_callbacks=> 'users/omniauth_callbacks'
+  }
 
   root 'static_pages#home'
-  get 'signup'=>'users#new'
-  get 'login_path'=>'session#new'
-  post 'login'=>'session#create'
-  delete 'logout'=>'session#destroy'
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

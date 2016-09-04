@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'omniauth-facebook'
 
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

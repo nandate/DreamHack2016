@@ -12,20 +12,14 @@
 				</li>
 				<li class="globalnav">
 					<ul>
-						<li><a class="pjx" href="">HOME</a></li>
-            <li><a class="pjx" >RANKING</a></li>
-            <li><a class="pjx" href="">PIC UP ARTIST</a></li>
-            <li><a class="pjx" href="">ALL ARTIST</a></li>
-						<li class="pulldown_wrap"><a class="pjx"><span>ABOUT</span></a>
-							<ul class="pulldown">
-								<li><a class="pjx">GOODS</a></li>
-								<li><a class="pjx">HOW TO BUY</a></li>
-								<li><a class="pjx">MEDIA</a></li>
-							</ul>
-						</li>
-						<li><a class="pjx">BLOG</a></li>
-						<li><a class="contact_open">CONTACT</a></li>
-            <%=link_to "Sign up",signup_path %>
+						<% if user_signed_in? %>
+                <h1><%= current_user.name%></h1>
+                <%= link_to 'プロフィール変更', edit_user_registration_path %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <% else %>
+								<%=link_to "ログイン",new_user_session_path %>
+								<%=link_to "Sign up",new_user_registration_path %>
+						<% end %>
 					</ul>
 				</li>
 				<li class="shadow"></li>
