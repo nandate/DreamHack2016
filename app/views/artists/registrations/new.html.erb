@@ -1,38 +1,38 @@
+<h1>Sign up</h1>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-
   <div class="field">
-    <h1><%= f.label :名前 %><br /></h1>
+    <h1><%= f.label :名前 %></h1>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <h1><%= f.label :年齢 %><br /></h1>
-    <%= f.text_field :age, autofocus: true %>
-  </div>
-
-
-  <div class="field">
-    <h1><%= f.label :住所 %><br /></h1>
-    <%= f.text_field :address, autofocus: true %>
+    <h1><%= f.label :アイコン %></h1>
+    <%= f.attachment_field :image, autofocus: true %>
   </div>
 
   <div class="field">
-    <h1><%= f.label :email %><br /></h1>
+    <h1><%= f.label :email %></h1>
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <h1><%= f.label :紹介文 %></h1>
+    <%= f.text_area :intro, autofocus: true %>
   </div>
 
   <div class="field">
     <h1><%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br /></h1>
+    <% end %></h1>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <h1><%= f.label :password_confirmation %><br /></h1>
+    <h1><%= f.label :password_confirmation %></h1>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -40,3 +40,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+<%= render "artists/shared/links" %>

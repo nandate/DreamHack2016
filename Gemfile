@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'refile',require: 'refile/rails'
+gem 'refile-mini_magick'
 
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

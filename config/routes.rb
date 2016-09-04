@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :artists
+  devise_for :artists,:controller=>{
+    :registrations=>'artists/registrations',
+    :sessions=>'artists/sessions',
+    :password=>'artists/password'
+  }
   devise_for :users,:controller=>{
     :registrations=>'users/registrations',
     :sessions=>'users/sessions',
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
   }
 
   root 'static_pages#home'
-  resources :users
+  get 'about'=>'static_pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
