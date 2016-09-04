@@ -2,23 +2,18 @@
 	<div class="header">
 		<nav>
 			<ul class="header_nav cf">
-				<li><h1><a class="pjx" href="">LOW-CUL MUSIC</a></h1></li>
-				<li class="padmenu">
-					<a href="#" class="tabmenu_open">
-						<div class="tabmenu_open_bar1"></div>
-						<div class="tabmenu_open_bar2"></div>
-						<div class="tabmenu_open_bar3"></div>
-					</a>
-				</li>
+				<h1>LOW-CUL</h1>
 				<li class="globalnav">
 					<ul>
+						<%=link_to "|Home",root_url %>
+						<%=link_to "|About","#" %>
 						<% if user_signed_in? %>
                 <h1><%= current_user.name%></h1>
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             <% else %>
-								<%=link_to "ログイン",new_user_session_path %>
-								<%=link_to "Sign Up",about_path %>
+								<%=link_to "|ログイン",new_user_session_path %>
+								<%=link_to "|Sign Up|",about_path %>
 						<% end %>
 					</ul>
 				</li>
@@ -51,65 +46,138 @@
     </div>
   </div>
 </header>
-
 <article>
-  <nav>
-    <ul class="header_nav cf">
-      <li class="globalnav">
-        <ul>
-          <li><a class="pjx">演歌</a></li>
-          <li><a class="pjx">J-POP</a></li>
-          <li><a class="pjx">K-POP</a></li>
-          <li><a class="pjx" href="">RAP</a></li>
-          <li><a class="pjx">R&B</a></li>
-          <li><a class="pjx">ROCK</a></li>
-          <li><a class="pjx">HEVEY METAL</a></li>
-          <li><a class="pjx">DJ</a></li>
-          <li><a class="pjx">レゲエ</a></li>
-          <li><a class="pjx">Classic</a></li>
-          <li><a class="pjx">Jazz</a></li>
-          <li><a class="pjx">Idol</a></li>
-        </ul>
-      </li>
-      <li class="shadow"></li>
-    </ul>
-  </nav>
-  <br><br><br>
-  <div class="home-parent">
-    <div class="home-left">
-  		<h1>盛り上がっている地域</h1>
-  			<ul>
-  				<li><a class="pjx">1.東京</a></li>
-          <li><a class="pjx">2.</a></li>
-  				<li><a class="pjx">3.</a></li>
-  				<li><a class="pjx">4.</a></li>
-  				<li><a class="pjx">5.</a></li>
-        </ul>
-    </div>
+	<section>
+		<div class="box">
 
-    <div class="home-right">
-    <div class="tube_body">
-    <div class="tube_slider">
-			<h1>MOVIE.</h1>
-      <div class="tube_slider_body">
-	       <div class="cover tube_slider_mask" data-src="http://c.okmusic.jp/news_images/images/726302/original.jpg?1434537190"></div>
-	        <div class="tube_slider_inner">
-		        <h1>LOW-CUL MUSIC PV &#8220;with MUSIC!&#8221;</h1>
-		          <a href="#" id="m3btn" class="btn_tube_play" > <div class="front">b</div> <div class="back">c</div> </a>
-		            <div class="block_wrap block_wrapM">
-			          <a href="" target="_blank" class="btn">
-				        <div class="front">VIEW ON YOUTUBE</div>
-				        <div class="back">VIEW ON YOUTUBE</div>
-			          </a>
-		        </div>
-	        </div>
-				<div id="m1"></div>
-				<div id="m2"></div>
-				<div id="m3"></div>
-			</div><!-- .box_body -->
-    </div>
-    </div>
-    </div>
-  </div>
+			<div class="box_header cf">
+				<h1>NEWS.</h1>
+				<div class="block_wrapS">
+					<div class="block_wrap">
+						<a href="blog/index.html" class="btn">
+							<div class="front">VIEW MORE</div>
+							<div class="back">VIEW MORE</div>
+						</a>
+					</div>
+				</div>
+			</div><!-- .box_header -->
+
+			<div class="box_body">
+
+
+<div class="news_body">
+	<div class="news_thumb">
+		<p class="cover" data-src="http://plusblog.jp/wp-content/uploads/2013/03/13-570x351.jpg">2016.08.026</p>
+	</div>
+	<div class="news_text">
+		<h1><a class="pjx" href="">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></h1>
+	</div>
+	<div class="news_link">
+		<div class="block_wrapS">
+			<div class="block_wrap">
+				<a href="" class="btn pjx">
+					<div class="front">READ MORE</div>
+					<div class="back">READ MORE</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div><!-- .news_body -->
+
+<section>
+	<div class="box album_body iindex">
+
+		<div class="box_header cf">
+			<h1>RANKING.</h1>
+			<div class="block_wrapS">
+				<div class="block_wrap">
+					<a href="" class="btn pjx">
+						<div class="front">VIEW MORE</div>
+						<div class="back">VIEW MORE</div>
+					</a>
+				</div>
+			</div>
+		</div><!-- .box_header -->
+
+		<li class="globalnav">
+			<ul class="nav navbar-nav navbar">
+				<li><a class="pjx">総合</a></li>
+				<li><a class="pjx">RANKING</a></li>
+				<li><a class="pjx">PIC UP ARTIST</a></li>
+				<li><a class="pjx">ALL ARTIST</a></li>
+				<li><a class="pjx">ABOUT</a></li>
+				<li><a class="pjx">BLOG</a></li>
+				<li><a class="pjx">CONTACT</a></li>
+				<li><a class="pjx">m</a></li>
+			</ul>
+		</li>
+
+	</div>
+
+	<div class="albumLR albumH cf">
+		<div class="albumL_wrap block_wrap albumH">
+			<div class="albumL block albumH">
+				<div class="front albumH"><img src="image/02.jpg"></div>
+				<div class="back albumH">
+					<ul>
+					<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="albumR">
+			<div>
+				<h1>No1</h1>
+				<h1>曲名</h1>
+				<h2>ARTIST NAME</h2>
+	            <br>
+	            <h1>&#9825; 123456</h1>
+			</div>
+		</div><span class="albumM"></span>
+	</div>
+
+
+<div class="albumLR albumH cf">
+	<div class="albumL_wrap block_wrap albumH">
+		<div class="albumL block albumH">
+			<div class="front albumH"><img src="image/02.jpg"></div>
+			<div class="back albumH">
+				<ul>
+				<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="albumR">
+		<div>
+			<h1>NO.2</h1>
+			<h2>ARTIST NAME</h2>
+            <br>
+            <h1>&#9825; 123456</h1>
+		</div>
+	</div><span class="albumM"></span>
+</div>
+
+<div class="albumLR albumH cf">
+	<div class="albumL_wrap block_wrap albumH">
+		<div class="albumL block albumH">
+			<div class="front albumH"><img src="image/02.jpg"></div>
+			<div class="back albumH">
+				<ul>
+				<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="albumR">
+		<div>
+			<h1>NO.3</h1>
+			<h2>ARTIST NAME</h2>
+            <br>
+            <h1>&#9825; 123456</h1>
+		</div>
+	</div><span class="albumM"></span>
+</div>
+
+
+</section>
+
 
 </article>
