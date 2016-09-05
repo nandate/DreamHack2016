@@ -5,4 +5,6 @@ class Artist < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attachment :image
+  has_many :musics,dependent: :destroy
+
 end
