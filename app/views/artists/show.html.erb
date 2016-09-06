@@ -1,0 +1,10 @@
+<h1><%=@artist.name %></h1>
+<h1><%=@artist.email %></h1>
+<h1><%=@artist.intro %></h1>
+
+<% if @artist.musics.any? %>
+  <h1>Music</h1>
+  <%= render @musics %>
+<% end %>
+
+<%=link_to "曲をアップロードする",new_music_path %>

@@ -1,0 +1,15 @@
+<%=form_for(@music) do |f| %>
+  <h1><%=f.label :曲名 %></h1>
+  <%=f.text_field :name %>
+
+  <h1><%=f.label :URL %></h1>
+  <%=f.text_field :URL %>
+
+  <h1><%=f.label :ジャンル %></h1>
+  <h1><%=f.radio_button :genre,"0" %>アイドル</h1>
+  <h1><%=f.radio_button :genre,"1" %>DJ</h1>
+  <h1><%=f.radio_button :genre,"2" %>J-POP</h1>
+  <h1><%=f.radio_button :genre,"3" %>アニメ</h1>
+
+  <%=f.submit "投稿する" %>
+<% end %>

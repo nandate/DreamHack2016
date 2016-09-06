@@ -6,13 +6,17 @@
 				<li class="globalnav">
 					<ul>
 						<%=link_to "|Home",root_url %>
-						<%=link_to "|About","#" %>
-						<% if user_signed_in? %>
-                <%= link_to current_user.name,current_user%>
-                <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            <% else %>
-								<%=link_to "|ログイン",new_user_session_path %>
+						<%=link_to "|About|","#" %>
+						<% if user_signed_in?%>
+                <%= link_to current_user.name+"様",current_user%>
+                <%= link_to '|プロフィール変更', edit_user_registration_path %>
+                <%= link_to '|ログアウト|', destroy_user_session_path, method: :delete %>
+            <% elsif artist_signed_in? %>
+								<%= link_to current_artist.name,current_artist%>
+								<%= link_to '|プロフィール変更', edit_artist_registration_path %>
+								<%= link_to '|ログアウト|', destroy_artist_session_path, method: :delete %>
+						<% else %>
+								<%=link_to "|ログイン",about_path %>
 								<%=link_to "|Sign Up|",about_path %>
 						<% end %>
 					</ul>
