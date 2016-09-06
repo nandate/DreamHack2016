@@ -6,5 +6,5 @@ class Artist < ActiveRecord::Base
 
   attachment :image
   has_many :musics,dependent: :destroy
-
+  
 end
