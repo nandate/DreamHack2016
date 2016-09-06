@@ -8,7 +8,7 @@
 						<%=link_to "|Home",root_url %>
 						<%=link_to "|About","#" %>
 						<% if user_signed_in? %>
-                <h1><%= current_user.name%></h1>
+                <%= current_user.name%>
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             <% else %>
@@ -39,12 +39,7 @@
 </ul>			</div>
     <h3>LIVE MY LIFE WITH MUSIC</h3>
   </div>
-  <div id="movie_wrap">
-    <div id="movie">
-      <div id="player" data-tubeid="73O7tATQ8og"></div>
-      <div id="player_mask" class="cover" ></div>
-    </div>
-  </div>
+
 </header>
 <article>
 	<section>
