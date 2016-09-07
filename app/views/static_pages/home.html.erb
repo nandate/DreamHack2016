@@ -2,22 +2,32 @@
 	<div class="header">
 		<nav>
 			<ul class="header_nav cf">
-				<h1>LOW-CUL</h1>
+				<div>LOW-CUL MUSIC</div>
 				<li class="globalnav">
 					<ul>
-						<%=link_to "|Home",root_url %>
-						<%=link_to "|About|","#" %>
+						<li><%=link_to "Home",root_url %></li>
+						<li><%=link_to "About","#" %></li>
 						<% if user_signed_in?%>
-                <%= link_to current_user.name+"様",current_user%>
-                <%= link_to '|プロフィール変更', edit_user_registration_path %>
-                <%= link_to '|ログアウト|', destroy_user_session_path, method: :delete %>
+                <li><%= link_to current_user.name+"様",current_user%></li>
+                <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% elsif artist_signed_in? %>
-								<%= link_to current_artist.name,current_artist%>
-								<%= link_to '|プロフィール変更', edit_artist_registration_path %>
-								<%= link_to '|ログアウト|', destroy_artist_session_path, method: :delete %>
+								<li><%= link_to current_artist.name+"様",current_artist%></li>
+								<li><%= link_to 'プロフィール変更', edit_artist_registration_path %></li>
+								<li><%= link_to 'ログアウト', destroy_artist_session_path, method: :delete %></li>
 						<% else %>
-								<%=link_to "|ログイン",about_path %>
-								<%=link_to "|Sign Up|",about_path %>
+								<li class="pulldown_wrap"><a class="pjx">ログイン</a>
+									<ul class="pulldown">
+										<li><%=link_to "一般の方",new_user_session_path %></li>
+										<li><%=link_to "アーティストの方",new_artist_session_path %></li>
+									</ul>
+								</li>
+								<li class="pulldown_wrap"><a class="pjx">Sign Up</a>
+									<ul class="pulldown">
+										<li><%=link_to "一般の方",new_user_registration_path %></li>
+										<li><%=link_to "アーティストの方",new_artist_registration_path %></li>
+									</ul>
+								</li>
 						<% end %>
 					</ul>
 				</li>
@@ -50,7 +60,7 @@
 		<div class="box">
 
 			<div class="box_header cf">
-				<h1>NEWS.</h1>
+				<h1>NEWS</h1>
 				<div class="block_wrapS">
 					<div class="block_wrap">
 						<a href="blog/index.html" class="btn">
@@ -87,7 +97,7 @@
 	<div class="box album_body iindex">
 
 		<div class="box_header cf">
-			<h1>RANKING.</h1>
+			<h1>RANKING</h1>
 			<div class="block_wrapS">
 				<div class="block_wrap">
 					<a href="" class="btn pjx">
@@ -101,13 +111,10 @@
 		<li class="globalnav">
 			<ul class="nav navbar-nav navbar">
 				<li><a class="pjx">総合</a></li>
-				<li><a class="pjx">RANKING</a></li>
-				<li><a class="pjx">PIC UP ARTIST</a></li>
-				<li><a class="pjx">ALL ARTIST</a></li>
-				<li><a class="pjx">ABOUT</a></li>
-				<li><a class="pjx">BLOG</a></li>
-				<li><a class="pjx">CONTACT</a></li>
-				<li><a class="pjx">m</a></li>
+				<li><a class="pjx">アイドル</a></li>
+				<li><a class="pjx">DJ</a></li>
+				<li><a class="pjx">J-POP</a></li>
+				<li><a class="pjx">アニメ</a></li>
 			</ul>
 		</li>
 

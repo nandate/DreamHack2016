@@ -3,8 +3,7 @@ class Artist < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  attachment :image
+  mount_uploader :image,ImageUploader
   has_many :musics,dependent: :destroy
-  
+
 end
