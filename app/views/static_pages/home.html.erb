@@ -1,61 +1,27 @@
-<header>
-	<div class="header">
-		<nav>
-			<ul class="header_nav cf">
-				<div>LOW-CUL MUSIC</div>
-				<li class="globalnav">
-					<ul>
-						<li><%=link_to "Home",root_url %></li>
-						<li><%=link_to "About","#" %></li>
-						<% if user_signed_in?%>
-                <li><%= link_to current_user.name+"様",current_user%></li>
-                <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-            <% elsif artist_signed_in? %>
-								<li><%= link_to current_artist.name+"様",current_artist%></li>
-								<li><%= link_to 'プロフィール変更', edit_artist_registration_path %></li>
-								<li><%= link_to 'ログアウト', destroy_artist_session_path, method: :delete %></li>
-						<% else %>
-								<li class="pulldown_wrap"><a class="pjx">ログイン</a>
-									<ul class="pulldown">
-										<li><%=link_to "一般の方",new_user_session_path %></li>
-										<li><%=link_to "アーティストの方",new_artist_session_path %></li>
-									</ul>
-								</li>
-								<li class="pulldown_wrap"><a class="pjx">Sign Up</a>
-									<ul class="pulldown">
-										<li><%=link_to "一般の方",new_user_registration_path %></li>
-										<li><%=link_to "アーティストの方",new_artist_registration_path %></li>
-									</ul>
-								</li>
-						<% end %>
-					</ul>
-				</li>
-				<li class="shadow"></li>
-			</ul>
-		</nav>
-	</div><!-- .header -->
-  <div class="header_title">
-    <h2>LOW-CUL MUSIC,TO THE REGION.</h2>
-    <div class="block_wrapM block_wrap">
-      <span class="border"></span>
-        <ul class="btn">
-  <li class="front">SHARE</li>
-  <li class="back icon">
-      <ul class="sns_all" data-title="">
-          <li><a class="sns_tw">n</a></li>
-          <li><a class="sns_yt" >a</a></li>
-          <li><a class="sns_fb">o</a></li>
-          <li><a class="sns_gg">p</a></li>
-          <li><a class="sns_sd">q</a></li>
-      </ul>
-  </li>
-</ul>			</div>
-    <h3>LIVE MY LIFE WITH MUSIC</h3>
-  </div>
 
-</header>
+
 <article>
+	<section>
+	<div class="header_title">
+		<h2>LOW-CUL MUSIC,TO THE REGION.</h2>
+		<div class="block_wrapM block_wrap">
+			<span class="border"></span>
+				<ul class="btn">
+	<li class="front">SHARE</li>
+	<li class="back icon">
+			<ul class="sns_all" data-title="">
+					<li><a class="sns_tw">n</a></li>
+					<li><a class="sns_yt" >a</a></li>
+					<li><a class="sns_fb">o</a></li>
+					<li><a class="sns_gg">p</a></li>
+					<li><a class="sns_sd">q</a></li>
+			</ul>
+	</li>
+	</ul>			</div>
+		<h3>LIVE MY LIFE WITH MUSIC</h3>
+	</div>
+</section>
+
 	<section>
 		<div class="box">
 
@@ -181,9 +147,7 @@
 		</div>
 	</div><span class="albumM"></span>
 </div>
-
-
 </section>
 
-
+<%=link_to "続きを見る",artists_path %>
 </article>

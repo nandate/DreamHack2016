@@ -1,12 +1,15 @@
+<article>
 <h1>マイページ</h1>
 <h1><%=@artist.name %></h1>
 <%=image_tag @artist.image.url,:size=>"100x100"%>
 <h1><%=@artist.email %></h1>
 <h1><%=@artist.intro %></h1>
-
+<br>
 <% if @artist.musics.any? %>
   <h1>Music</h1>
   <%= render @musics %>
 <% end %>
-
-<%=link_to "曲をアップロードする",new_music_path %>
+<% if current_artist.email==@artist.email %>
+  <%=link_to "曲をアップロードする",new_music_path %>
+<% end %>
+</article>
