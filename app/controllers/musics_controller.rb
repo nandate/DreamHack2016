@@ -4,6 +4,10 @@ class MusicsController < ApplicationController
     @music=Music.new
   end
 
+  def index
+    @musics=Music.all
+  end
+
   def create
     @music=current_artist.musics.build(music_params)
     if @music.save

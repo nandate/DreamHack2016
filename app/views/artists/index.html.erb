@@ -1,8 +1,16 @@
-<h1>All Artists</h1>
-<ul>
-  <% @artists.each do |artist| %>
-  <li>
-    <%=link_to artist.name,artist %>
-  </li>
-  <% end %>
-</ul>
+<selection>
+<div class="box">
+  <div class="box_header cf">
+		<h1>ALL Artists</h1>
+	</div>
+  <div class="box_body">
+    <ul>
+      <% @artists.each do |artist| %>
+      <li>
+        <%=link_to artist.name,artist %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</section>

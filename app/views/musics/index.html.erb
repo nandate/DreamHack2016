@@ -1,0 +1,26 @@
+<div class="box">
+  <div class="box_header cf">
+		<h1>ALL Musics</h1>
+	</div>
+<% @musics.each do |music| %>
+  <div class="box_body">
+    <div class="albumLR albumH cf">
+  		<div class="albumL_wrap block_wrap albumH">
+  			<div class="albumL block albumH">
+  				<div class="front albumH"><img src="image/02.jpg"></div>
+  				<div class="back albumH">
+  				</div>
+  			</div>
+  		</div>
+  		<div class="albumR">
+  			<div>
+  				<h1>No1</h1>
+  				<h1>曲名:<%=link_to music.name,music.URL %></h1>
+  	            <br>
+  	            <h1>&#9825; 123456</h1>
+  			</div>
+  		</div><span class="albumM"></span>
+  	</div>
+  </div>
+<% end %>
+</div>
