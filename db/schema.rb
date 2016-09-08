@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907061437) do
+ActiveRecord::Schema.define(version: 20160908044946) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160907061437) do
     t.integer  "point",       default: 0
     t.string   "URL"
     t.string   "image"
-    t.integer  "genre"
+    t.string   "genre"
     t.string   "contributor"
     t.integer  "artist_id"
     t.datetime "created_at",              null: false
@@ -47,6 +47,24 @@ ActiveRecord::Schema.define(version: 20160907061437) do
   end
 
   add_index "musics", ["artist_id"], name: "index_musics_on_artist_id"
+
+  create_table "relation_ships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

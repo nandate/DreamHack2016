@@ -8,6 +8,10 @@ class MusicsController < ApplicationController
     @musics=Music.all
   end
 
+  def show
+    @music=Music.find(params[:id])
+  end
+
   def create
     @music=current_artist.musics.build(music_params)
     if @music.save
