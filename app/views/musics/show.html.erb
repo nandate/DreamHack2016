@@ -1,6 +1,5 @@
+<% @music.URL="https://www.youtube.com/embed/"+@music.URL %>
 <h1><%=@music.name %></h1>
 <%=render 'like' %>
-<video width="530",height="315">
-  <source src="<%=@music.URL %>">
-</video>
+<iframe width="560" height="315" src="<%=@music.URL%>" frameborder=="0" allowfullscreen></iframe>
 <h1>ジャンル:<%=@music.genre %></h1>
