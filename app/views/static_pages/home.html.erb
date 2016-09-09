@@ -49,27 +49,22 @@
 	</section>
 
 <section>
-	<div class="box album_body iindex">
+	<div class="box">
+	<div class="box_header cf">
+		<h1>RANKING</h1>
+	</div><!-- .box_header -->
 
+	<div id="tabs">
 		<div class="box_header cf">
-			<h1>RANKING</h1>
-			<div class="block_wrapS">
-			</div>
-		</div><!-- .box_header -->
-
-		<li class="globalnav">
-			<ul class="nav navbar-nav navbar">
-				<li><a class="pjx"　href="#panel1">総合</a></li>
-				<li><a class="pjx"  href="#panel2">アイドル</a></li>
-				<li><a class="pjx"  href="#panel3">DJ</a></li>
-				<li><a class="pjx"  href="#panel4">POP</a></li>
-				<li><a class="pjx"  href="#panel5">アニメ</a></li>
-			</ul>
-		</li>
+		<ul class="nav navbar-nav navbar">
+			<li><a href="#panel1">総合</a></li>
+			<li><a href="#panel2">アイドル</a></li>
+			<li><a href="#panel3">DJ</a></li>
+			<li><a href="#panel4">POP</a></li>
+			<li><a href="#panel5">ロック</a></li>
+		</ul>
 	</div>
-
-
-  <div id="panel1">
+<div id="panel1" class="panel">
   <% count=1%>
 	<% @musics=Music.order(point: :desc)%>
 	<% @musics.each do |music| %>
@@ -79,9 +74,9 @@
 			<div class="albumL block albumH">
 				<div class="front albumH"><%=image_tag music.image %></div>
 				<div class="back albumH">
-					<ul>
-					<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
-				</div>
+				<ul>
+					<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li></ul>
+			</div>
 			</div>
 		</div>
 		<div class="albumR">
@@ -98,7 +93,7 @@
 	<%end%>
 	</div>
 
-	<div id="panel2">
+	<div id="panel2" class="panel">
 	<% count=1%>
 	<% @musics=Music.where(:genre=>"アイドル").order(point: :desc)%>
 	<% @musics.each do |music| %>
@@ -127,7 +122,7 @@
 	<%end%>
 	</div>
 
-		<div id="panel3">
+		<div id="panel3" class="panel">
 		<% count=1%>
 		<% @musics=Music.where(:genre=>"DJ").order(point: :desc)%>
 		<% @musics.each do |music| %>
@@ -156,7 +151,7 @@
 		<%end%>
 		</div>
 
-			<div id="panel4">
+			<div id="panel4" class="panel">
 			<% count=1%>
 			<% @musics=Music.where(:genre=>"POP").order(point: :desc)%>
 			<% @musics.each do |music| %>
@@ -185,7 +180,7 @@
 			<%end%>
 			</div>
 
-				<div id="panel5">
+				<div id="panel5" class="panel">
 				<% count=1%>
 				<% @musics=Music.where(:genre=>"ロック").order(point: :desc)%>
 				<% @musics.each do |music| %>
@@ -214,7 +209,7 @@
 				<%end%>
 				</div>
 			</div>
-
+		</div>
 </section>
 
 <%=link_to "続きを見る",musics_path %>
