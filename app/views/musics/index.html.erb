@@ -2,7 +2,7 @@
   <div class="box_header cf">
 		<h1>ALL Musics</h1>
 	</div>
-<% @musics.each do |music| %>
+<% @musics.order(point: :desc).each do |music| %>
   <div class="box_body">
     <div class="albumLR albumH cf">
   		<div class="albumL_wrap block_wrap albumH">

@@ -58,20 +58,25 @@
 
 		<li class="globalnav">
 			<ul class="nav navbar-nav navbar">
-				<li><a class="pjx">総合</a></li>
-				<li><a class="pjx">アイドル</a></li>
-				<li><a class="pjx">DJ</a></li>
-				<li><a class="pjx">J-POP</a></li>
-				<li><a class="pjx">アニメ</a></li>
+				<li><a class="pjx"　href="#panel1">総合</a></li>
+				<li><a class="pjx"  href="#panel2">アイドル</a></li>
+				<li><a class="pjx"  href="#panel3">DJ</a></li>
+				<li><a class="pjx"  href="#panel4">POP</a></li>
+				<li><a class="pjx"  href="#panel5">アニメ</a></li>
 			</ul>
 		</li>
-
 	</div>
 
+
+  <div id="panel1">
+  <% count=1%>
+	<% @musics=Music.order(point: :desc)%>
+	<% @musics.each do |music| %>
+	<% if count<4 %>
 	<div class="albumLR albumH cf">
 		<div class="albumL_wrap block_wrap albumH">
 			<div class="albumL block albumH">
-				<div class="front albumH"><img src="image/02.jpg"></div>
+				<div class="front albumH"><%=image_tag music.image %></div>
 				<div class="back albumH">
 					<ul>
 					<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
@@ -80,56 +85,149 @@
 		</div>
 		<div class="albumR">
 			<div>
-				<h1>No1</h1>
-				<h1>曲名</h1>
-				<h2>ARTIST NAME</h2>
+				<h1>No<%=count %></h1>
+				<h1><%=link_to music.name,music%></h1>
 	            <br>
-	            <h1>&#9825; 123456</h1>
+	            <h1>&#9825; <%=music.point%></h1>
 			</div>
 		</div><span class="albumM"></span>
 	</div>
+	<% count=count+1 %>
+	<% end %>
+	<%end%>
+	</div>
 
-
-<div class="albumLR albumH cf">
-	<div class="albumL_wrap block_wrap albumH">
-		<div class="albumL block albumH">
-			<div class="front albumH"><img src="image/02.jpg"></div>
-			<div class="back albumH">
-				<ul>
-				<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+	<div id="panel2">
+	<% count=1%>
+	<% @musics=Music.where(:genre=>"アイドル").order(point: :desc)%>
+	<% @musics.each do |music| %>
+	<% if count<4 %>
+	<div class="albumLR albumH cf">
+		<div class="albumL_wrap block_wrap albumH">
+			<div class="albumL block albumH">
+				<div class="front albumH"><%=image_tag music.image %></div>
+				<div class="back albumH">
+					<ul>
+					<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="albumR">
-		<div>
-			<h1>NO.2</h1>
-			<h2>ARTIST NAME</h2>
-            <br>
-            <h1>&#9825; 123456</h1>
-		</div>
-	</div><span class="albumM"></span>
-</div>
-
-<div class="albumLR albumH cf">
-	<div class="albumL_wrap block_wrap albumH">
-		<div class="albumL block albumH">
-			<div class="front albumH"><img src="image/02.jpg"></div>
-			<div class="back albumH">
-				<ul>
-				<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+		<div class="albumR">
+			<div>
+				<h1>No<%=count %></h1>
+				<h1><%=link_to music.name,music%></h1>
+							<br>
+							<h1>&#9825; <%=music.point%></h1>
 			</div>
-		</div>
+		</div><span class="albumM"></span>
 	</div>
-	<div class="albumR">
-		<div>
-			<h1>NO.3</h1>
-			<h2>ARTIST NAME</h2>
-            <br>
-            <h1>&#9825; 123456</h1>
+	<% count=count+1 %>
+	<% end %>
+	<%end%>
+	</div>
+
+		<div id="panel3">
+		<% count=1%>
+		<% @musics=Music.where(:genre=>"DJ").order(point: :desc)%>
+		<% @musics.each do |music| %>
+		<% if count<4 %>
+		<div class="albumLR albumH cf">
+			<div class="albumL_wrap block_wrap albumH">
+				<div class="albumL block albumH">
+					<div class="front albumH"><%=image_tag music.image %></div>
+					<div class="back albumH">
+						<ul>
+						<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+					</div>
+				</div>
+			</div>
+			<div class="albumR">
+				<div>
+					<h1>No<%=count %></h1>
+					<h1><%=link_to music.name,music%></h1>
+								<br>
+								<h1>&#9825; <%=music.point%></h1>
+				</div>
+			</div><span class="albumM"></span>
 		</div>
-	</div><span class="albumM"></span>
-</div>
+		<% count=count+1 %>
+		<% end %>
+		<%end%>
+		</div>
+
+			<div id="panel4">
+			<% count=1%>
+			<% @musics=Music.where(:genre=>"POP").order(point: :desc)%>
+			<% @musics.each do |music| %>
+			<% if count<4 %>
+			<div class="albumLR albumH cf">
+				<div class="albumL_wrap block_wrap albumH">
+					<div class="albumL block albumH">
+						<div class="front albumH"><%=image_tag music.image %></div>
+						<div class="back albumH">
+							<ul>
+							<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+						</div>
+					</div>
+				</div>
+				<div class="albumR">
+					<div>
+						<h1>No<%=count %></h1>
+						<h1><%=link_to music.name,music%></h1>
+									<br>
+									<h1>&#9825; <%=music.point%></h1>
+					</div>
+				</div><span class="albumM"></span>
+			</div>
+			<% count=count+1 %>
+			<% end %>
+			<%end%>
+			</div>
+
+				<div id="panel5">
+				<% count=1%>
+				<% @musics=Music.where(:genre=>"ロック").order(point: :desc)%>
+				<% @musics.each do |music| %>
+				<% if count<4 %>
+				<div class="albumLR albumH cf">
+					<div class="albumL_wrap block_wrap albumH">
+						<div class="albumL block albumH">
+							<div class="front albumH"><%=image_tag music.image %></div>
+							<div class="back albumH">
+								<ul>
+								<li><a target="_blank" href="">ABOUT</a></li><li><a target="_blank" href="">MUSIC</a></li><li><a target="_blank" href="">MOVES</a></li>	<li><a target="_blank" href="">GOODS</a></li>				</ul>
+							</div>
+						</div>
+					</div>
+					<div class="albumR">
+						<div>
+							<h1>No<%=count %></h1>
+							<h1><%=link_to music.name,music%></h1>
+										<br>
+										<h1>&#9825; <%=music.point%></h1>
+						</div>
+					</div><span class="albumM"></span>
+				</div>
+				<% count=count+1 %>
+				<% end %>
+				<%end%>
+				</div>
+			</div>
+
 </section>
 
 <%=link_to "続きを見る",musics_path %>
 </article>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#tabs a[href^="#panel"]').click(function(){
+		$("#tabs .panel").hide();
+		$(this.hash).fadeIn();
+		return false;
+	});
+	$('#tabs a[href^="#panel"]:eq(0)').trigger('click');
+})
+</script>
