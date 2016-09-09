@@ -9,7 +9,7 @@
   <h1>Music</h1>
   <%= render @musics %>
 <% end %>
-<% if current_artist.email==@artist.email %>
+<% if artist_signed_in?%>
   <%=link_to "曲をアップロードする",new_music_path %>
 <% end %>
 </article>

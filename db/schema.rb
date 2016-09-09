@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908044946) do
+ActiveRecord::Schema.define(version: 20160908182641) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20160908044946) do
   add_index "artists", ["email"], name: "index_artists_on_email", unique: true
   add_index "artists", ["reset_password_token"], name: "index_artists_on_reset_password_token", unique: true
 
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "music_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "musics", force: :cascade do |t|
     t.string   "name"
     t.integer  "point",       default: 0
@@ -47,13 +54,6 @@ ActiveRecord::Schema.define(version: 20160908044946) do
   end
 
   add_index "musics", ["artist_id"], name: "index_musics_on_artist_id"
-
-  create_table "relation_ships", force: :cascade do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

@@ -1,1 +1,6 @@
-<%=render 'music' %>
+<h1><%=@music.name %></h1>
+<%=render 'like' %>
+<video width="530",height="315">
+  <source src="<%=@music.URL %>">
+</video>
+<h1>ジャンル:<%=@music.genre %></h1>

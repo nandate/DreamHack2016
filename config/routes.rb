@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   get 'about'=>'static_pages#about'
   resources :users,:only=>[:index,:show]
   resources :artists,:only=>[:index,:show]
-  resources :musics
+  resources :musics do
+    resources :likes,only: [:create,:destroy]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

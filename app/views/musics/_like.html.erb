@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <% if @music.like_user(current_user.id) %>
+    <%= button_to music_like_path(music_id: @music.id), method: :delete, id: "like-button", remote: true do %>
+      <%=image_tag("heart01.png",:size=>"30x30")%>
+      評価済み
+    <span><%=@music.point %></span>
+    <%end%>
+  <%else%>
+    <%= button_to music_likes_path(@music), id: "like-button", remote: true do %>
+      <%=image_tag("heart01.png",:size=>"30x30")%>
+      いいね！
+    <span><%=@music.point %></span>
+  <%end%>
+  <%end%>
+<%else%>
+<%@music.point %>
+<%end%>
