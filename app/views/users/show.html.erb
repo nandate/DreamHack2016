@@ -3,3 +3,30 @@
 <h1><%=@user.age %></h1>
 <h1><%=@user.email %></h1>
 <h1><%=@user.address %></h1>
+
+<% if @user.likes.any? %>
+<div class="box">
+  <div class="box_header cf">
+		<h1>Musics</h1>
+	</div>
+  <% @user.likes.each do |like| %>
+    <div class="box_body">
+      <div class="albumLR albumH cf">
+    		<div class="albumL_wrap block_wrap albumH">
+    			<div class="albumL block albumH">
+    				<div class="front albumH"><%=image_tag like.music.image%></div>
+    				<div class="back albumH">
+    				</div>
+    			</div>
+    		</div>
+    		<div class="albumR">
+    			<div>
+    				<h1>曲名:<%=link_to like.music.name,like.music%></h1>
+    	            <br>
+    	            <h1>&#9825; <%=like.music.point%></h1>
+    			</div>
+    		</div><span class="albumM"></span>
+    	</div>
+    </div>
+  <% end %>
+<% end %>

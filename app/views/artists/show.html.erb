@@ -5,11 +5,36 @@
 <h1><%=@artist.email %></h1>
 <h1><%=@artist.intro %></h1>
 <br>
+
 <% if @artist.musics.any? %>
-  <h1>Music</h1>
-  <%= render @musics %>
+<div class="box">
+  <div class="box_header cf">
+		<h1>Musics</h1>
+	</div>
+  <% @musics.each do |music| %>
+    <div class="box_body">
+      <div class="albumLR albumH cf">
+    		<div class="albumL_wrap block_wrap albumH">
+    			<div class="albumL block albumH">
+    				<div class="front albumH"><%=image_tag music.image %></div>
+    				<div class="back albumH">
+    				</div>
+    			</div>
+    		</div>
+    		<div class="albumR">
+    			<div>
+    				<h1>曲名:<%=link_to music.name,music %></h1>
+    	            <br>
+    	            <h1>&#9825; <%=music.point%></h1>
+    			</div>
+    		</div><span class="albumM"></span>
+    	</div>
+    </div>
+  <% end %>
 <% end %>
+
 <% if artist_signed_in?%>
   <%=link_to "曲をアップロードする",new_music_path %>
 <% end %>
+</div>
 </article>

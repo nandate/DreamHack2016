@@ -4,15 +4,15 @@
 
   <h1><%=f.label :サムネイル %></h1>
   <%=f.file_field :image %>
-  
+
   <h1><%=f.label :URL %></h1>
   <%=f.text_field :URL %>
 
   <h1><%=f.label :ジャンル %></h1>
   <h1><%=f.radio_button :genre,"アイドル" %>アイドル</h1>
   <h1><%=f.radio_button :genre,"DJ" %>DJ</h1>
-  <h1><%=f.radio_button :genre,"J-POP" %>J-POP</h1>
-  <h1><%=f.radio_button :genre,"アニメ" %>アニメ</h1>
+  <h1><%=f.radio_button :genre,"POP" %>POP</h1>
+  <h1><%=f.radio_button :genre,"ロック" %>ロック</h1>
 
   <%=f.submit "投稿する" %>
 <% end %>
