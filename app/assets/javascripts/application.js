@@ -516,13 +516,13 @@ function onYouTubeIframeAPIReady(){
 	var p4ID = $('#m3btn').data('tubeid');
 	vid = 'gLSz5QBW25w';
 	function getID(){
-		var vids = ['6okxuiiHx2w', 'CYrCQsbX31c', '1TJuBcIFIgE', 't8kKx0BE76c', 'doRuF2nhR98'];
+		var vids = ['6okxuiiHx2w', 'MWXvwr9YulE', 'gpO64uQ9_1U', '5J8cglu_BT8', 'FFWgWXj2Hfk'];
 		vid = vids[Math.floor(Math.random() * vids.length)];
 	}
 	player = new YT.Player( 'player',{
 		width: '100%',
 		height: '700',
-		playerVars: {'showinfo': 0,'autohide': 1,'controls': 0,'rel': 0,'loop': 1,'wmode': 'transparent','playlist': '6okxuiiHx2w, CYrCQsbX31c, 1TJuBcIFIgE, t8kKx0BE76c, doRuF2nhR98, gByYpP8X1vQ, 4tqEyDCjCRs'},
+		playerVars: {'showinfo': 0,'autohide': 1,'controls': 0,'rel': 0,'loop': 1,'wmode': 'transparent','playlist': '6okxuiiHx2w, MWXvwr9YulE, gpO64uQ9_1U, 5J8cglu_BT8, FFWgWXj2Hfk'},
 		events: {
 			'onReady': onPlayerReady,
 			'onStateChange': onPlayerStateChange
